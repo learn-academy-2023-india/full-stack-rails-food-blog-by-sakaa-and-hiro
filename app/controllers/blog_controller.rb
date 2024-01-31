@@ -17,6 +17,13 @@ class BlogController < ApplicationController
     def edit
         @modified_blog = Blog.find(params[:id])
     end
+    def update
+        @modified_blog = Blog.find(params[:id])
+        @modified_blog.update(blog_params)
+        if @modified_blog.valid?
+            redirect_to blogs_path
+        end
+    end
     def delete
         @no_blog = Blog.find(params[:id])
         @no_blog.delete
