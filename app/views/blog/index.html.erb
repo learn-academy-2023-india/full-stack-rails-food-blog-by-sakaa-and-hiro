@@ -1,0 +1,9 @@
+<h1> Blog Post </h1>
+<h2> Food Blog post </h2>
+<ul>
+<% @blogs.each do |post|%>
+    <li>
+        Title: <%= post.title %> Content: <%= post.content %>
+    </li>
+    <% end %>
+</ul>
