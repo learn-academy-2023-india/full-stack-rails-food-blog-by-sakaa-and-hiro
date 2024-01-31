@@ -2,4 +2,4 @@
 <h2> <%= @one_blog.title %> </h1>
 <h2> <%= @one_blog.content %> </h2>
 <%= link_to 'Back to List', blogs_path %>
-
+<%= button_to 'Delete this Blog', delete_path(@one_blog), method: :delete %>
