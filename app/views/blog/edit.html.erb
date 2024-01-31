@@ -1,0 +1,13 @@
+<h1> Edit Your Blog Post </h1>
+<%= form_with model: @modified_blog, method: :patch do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+
+    <br>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+
+    <br>
+    <%= form.submit 'Edit Blog' %>
+<% end %>
+<%= link_to 'Back to List', blogs_path %>

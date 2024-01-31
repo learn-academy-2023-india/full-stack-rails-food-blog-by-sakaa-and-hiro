@@ -2,9 +2,6 @@ class BlogController < ApplicationController
     def index
         @blogs = Blog.all 
     end
-    def show 
-        @one_blog = Blog.find(params[:id])
-    end
     def new
         @new_blog = Blog.new
     end
@@ -13,6 +10,12 @@ class BlogController < ApplicationController
         if @new_blog.valid?
             redirect_to blogs_path
         end
+    end
+    def show 
+        @one_blog = Blog.find(params[:id])
+    end
+    def edit
+        @modified_blog = Blog.find(params[:id])
     end
     def delete
         @no_blog = Blog.find(params[:id])
